@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0b1f3a, #0047ab, #00a3ff);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 16px;
+    color: #e5f3ff;
+}
+
+.form-section {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 15px;
+}
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+    outline: none;
+}
+
+textarea:focus,
+input[type="file"]:focus {
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #ffd700;
+    color: #0b1f3a;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #d8efff;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}/* ============================= */
+/* RESULTS PAGE */
+/* ============================= */
+
+.result-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.result-card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.score-card {
+    text-align: center;
+}
+
+.score {
+    font-size: 55px;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 15px 0;
+}
+
+.score-card h3 {
+    font-size: 18px;
+    color: #e5f3ff;
+}
+
+.score-card h3 span {
+    color: #ffd700;
+}
+
+.section-description {
+    margin-bottom: 15px;
+    color: #d8efff;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    display: inline-block;
+    padding: 9px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.skill.matched {
+    background: rgba(40, 200, 100, 0.25);
+    border: 1px solid rgba(40, 200, 100, 0.7);
+}
+
+.skill.missing {
+    background: rgba(255, 90, 90, 0.25);
+    border: 1px solid rgba(255, 90, 90, 0.7);
+}
+
+.back-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background: #ffd700;
+    color: #0b1f3a;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}

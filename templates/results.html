@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Resume Analysis Results</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <main class="result-container">
+
+        <header class="result-header">
+            <h1>📊 Resume Analysis Results</h1>
+
+            <p>
+                Your AI-powered job compatibility analysis is ready.
+            </p>
+        </header>
+
+        <!-- Match Score -->
+        <section class="result-card score-card">
+            <h2>🎯 Match Score</h2>
+
+            <div class="score-circle">
+                {{ result.get("match_score", result.get("score", 0)) }}%
+            </div>
+
+            <h3>
+                Match Level:
+                <span class="match-level">
+                    {{ result.get("match_level", "") }}
+                </span>
+            </h3>
+        </section>
+
+        <!-- Matched Skills -->
+        <section class="result-card">
+            <h2>✅ Matched Skills</h2>
+
+            <div class="skills-container">
+                {% if result.get("matched_skills") %}
+
+                    {% for skill in result["matched_skills"] %}
+                        <span class="skill-badge matched">
+                            {{ skill }}
+                        </span>
+                    {% endfor %}
+
+                {% else %}
+                    <p class="empty-message">
+                        No matching skills were found.
+                    </p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Skills to Improve -->
+        <section class="result-card">
+            <h2>📚 Skills to Improve</h2>
+
+            <p>
+                Consider learning or adding these skills to improve
+                your job match.
+            </p>
+
+            <div class="skills-container">
+                {% if result.get("missing_skills") %}
+
+                    {% for skill in result["missing_skills"] %}
+                        <span class="skill-badge missing">
+                            {{ skill }}
+                        </span>
+                    {% endfor %}
+
+                {% else %}
+                    <p class="empty-message">
+                        Excellent! No important skills are missing.
+                    </p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Skills Found in Resume -->
+        <section class="result-card">
+            <h2>📄 Skills Found in Resume</h2>
+
+            <div class="skills-container">
+                {% if result.get("resume_skills") %}
+
+                    {% for skill in result["resume_skills"] %}
+                        <span class="skill-badge found">
+                            {{ skill }}
+                        </span>
+                    {% endfor %}
+
+                {% else %}
+                    <p class="empty-message">
+                        No recognized skills found in the resume.
+                    </p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Analyze Again Button -->
+        <div class="button-container">
+            <a href="/" class="analyze-again-button">
+                🔄 Analyze Another Resume
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                AI Job Resume Matcher • Smart Resume Analysis
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Job Resume Matcher</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🤖 AI Job Resume Matcher</h1>
+            <p>Analyze your resume and discover how well it matches a job description.</p>
+        </header>
+
+        <main>
+
+            <form action="/analyze" method="POST" enctype="multipart/form-data">
+
+                <div class="form-section">
+
+                    <label for="resume">
+                        📄 Upload Your Resume
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf,.docx,.txt"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-section">
+
+                    <label for="job_description">
+                        💼 Job Description
+                    </label>
+
+                    <textarea
+                        id="job_description"
+                        name="job_description"
+                        rows="10"
+                        placeholder="Paste the job description here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" id="analyzeBtn">
+                    🔍 Analyze Resume
+                </button>
+
+            </form>
+
+        </main>
+
+        <footer>
+            <p>AI-Powered Resume Analysis System</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
